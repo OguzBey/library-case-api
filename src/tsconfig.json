@@ -1,0 +1,34 @@
+{
+    "ts-node": {
+      "files": true
+    },
+    "include": ["./**/*.ts"],
+    "compilerOptions": {
+      "module": "CommonJS",
+      "target": "ES2020",
+      "moduleResolution": "node",
+      "types": ["reflect-metadata"],
+      "rootDir": "./",
+      "baseUrl": ".",
+      "outDir": "./dist",
+      "downlevelIteration": true,
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "noImplicitAny": true,
+      "skipLibCheck": true,
+      "resolveJsonModule": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "paths": {
+        "@controllers/*": ["controllers/*"],
+        "@helpers/*": ["helpers/*"],
+        "@middlewares/*": ["middlewares/*"],
+        "@models/*": ["models/*"],
+        "@services/*": ["services/*"],
+        "@shared/*": ["shared/*"]
+      }
+    }
+  }
+  

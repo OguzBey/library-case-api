@@ -1,0 +1,22 @@
+name: 'library-case-study'
+
+services:
+  db_postgres:
+    image: postgres:12.19-bullseye
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: h311000
+      POSTGRES_USER: library-user
+      POSTGRES_DB: library_db
+    ports:
+      - 5432:5432
+    # volumes:
+    #   - ./project-data/postgres-data:/var/lib/postgresql/data
+
+  backend_service:
+    build: '.'
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - db_postgres
